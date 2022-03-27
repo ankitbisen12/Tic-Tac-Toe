@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+#game {
+  background-color:rgb(102, 49, 209);
+  border-radius: 2vmin;
+  padding: 3vmin;
+  outline-style: dashed ;
+  outline-color: azure;
+  outline-width: 2px;
+  box-shadow: 0 1vmin 2vmin -1vmin rgba(0,0,0,0.75);
+}
+
+h1 {
+  color:#007340;
+  text-align: center;
+  margin-bottom: 2vmin;
+  font-size: 6vmin;
+  letter-spacing:3px;
+  font-family: 'Anton', sans-serif;
+}
+.h1Yel{
+  color: rgb(255 235 0);
+}
+.h1Red{
+   color: rgb(255 11 133);
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 20vmin);
+  grid-template-rows: repeat(3, 20vmin);
+  grid-gap: 1vmin;
+
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10vmin;
+  font-weight: bold;
+  color: #FD0;
+  background: linear-gradient(to right, #007340 0%,#05a058 100%);
+  border: 0.25vmin solid #007340;
+  border-radius: 2vmin;
+  outline: none;
+  box-shadow: 0 1vmin 2vmin -1vmin rgba(0,0,0,0.75);
+}
+
+.cell:active,
+.cell:hover,
+.cell.winner {
+  cursor: pointer;
+  color: #fff6be;
+  background:linear-gradient(to right, #00a057 0%,#07cf72 100%);
+}
+
+.cell_content {
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  transition: width 350ms,
+    height 350ms;
+}
+
+.cell_content.populated {
+  width: 12vmin;
+  height: 12vmin;
+}
+
+#modal-overlay {
+  display: grid;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#game-result-modal {
+  display: grid;
+  grid-row-gap: 76vmin;
+}
+
+#result-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+#winner-container {
+  margin-bottom: 4vmin;
+  width: 30vmin;
+  height: 8vmin;
+  font-size:  6vmin;
+  font-weight: bold;
+  color: #007340;
+  background: #FD0;
+  border: 0.25vmin solid #a79000;
+  box-shadow: 0 1vmin 2vmin -1vmin rgba(0,0,0,0.75);
+  border-radius: 1vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#new-game-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 2.5vmin;
+}
+
+#new-game-container > button {
+  font-size: 3vmin;
+  padding: 1.5vmin;
+  color: #FD0;
+  background: linear-gradient(to right, #007340 0%,#05a058 100%);
+  border: 0.25vmin solid #007340;
+  border-radius: 1vmin;
+  outline: none;
+  box-shadow:  0 1vmin 2vmin -1vmin rgba(0,0,0,0.75);
+}
+
+#new-game-container > button:hover,
+#new-game-container > button:active {
+  color: #fff6be;
+  cursor: pointer;
+  background: linear-gradient(to right, #00a057 0%,#07cf72 100%);
+}
+
+@media(max-width: 500px){
+  h1{
+      font-size: 12vmin;
+  }
+}

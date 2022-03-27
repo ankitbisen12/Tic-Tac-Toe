@@ -1,0 +1,30 @@
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10vmin;
+    font-weight: bold;
+    color: #FD0;
+    background-color:rgb(56, 9, 151);
+    border: 0.25vmin solid #007340;
+    border-radius: 2vmin;
+    outline: none;
+}
+
+.cell:active, .cell:hover, .cell_winner {
+    cursor: pointer;
+    color: #fff6be;
+    background-color:rgb(63, 26, 136);
+}
+
+.cell_content {
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    transition: width 350ms, height 350ms;
+}
+
+.cell_content.populated {
+    width: 12vmin;
+    height: 12vmin;
+}
